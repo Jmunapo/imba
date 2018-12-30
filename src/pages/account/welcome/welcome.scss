@@ -1,0 +1,94 @@
+page-welcome {
+    
+    .page-content{
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        color: #fafafa;
+        background: linear-gradient(135deg, #1f1e1d 9%, #060101 47%, #331c15 81%);
+        .main-row{
+            margin-top: 40px;
+            margin-bottom: 20px;
+            img{
+                width: 30%;
+            }
+        }
+
+        .instrct-text, .terms{
+            margin-top: 0.5rem;
+            color: #9e9595;
+        }
+
+        .terms-row{
+            position: fixed;
+            bottom: 20px;
+            text-align: center;
+            width: 90%;
+        }
+        .terms{
+            text-align: center;
+        }
+        
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    //   .img {
+    //       width: 45%;
+    //       margin-top: 86px;
+    //   }
+    //   .bg-img {
+    //     position: fixed;
+    //     width: 100%;
+    //     height: 100%;
+    //     background: linear-gradient(rgba(0, 0, 0, 0.63), rgba(0, 0, 0, 0.616)), url('../../../assets/bcg/bcg-clock.jpg') center center no-repeat;
+    //     background-size: cover;
+    //     z-index: -1;
+    //     filter: blur(3px);
+    //     -webkit-filter: blur(3px);
+    //   }
+
+    //   .content {
+    //     z-index: 2;
+    //     color: #fafafa;
+    //     .welcome{
+    //         margin-bottom: 0.5rem;
+    //     }
+    //     .instrct-text{
+    //         margin-top: 0.5rem;
+    //         color: #9e9595;
+    //     }
+    //   }
+    // .actn-btns{
+    //     height: 2.4em;
+    //     font-size: 1.8rem;
+    //     border-radius: 5px;
+    // }
+
+    // .terms{
+    //     text-align: center;
+    //     margin-top: 20px;
+    //     color: #9e9595;
+    // }
+}

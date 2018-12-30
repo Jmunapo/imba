@@ -1,0 +1,56 @@
+page-landlord-login {
+    ion-content{
+        text-align: center;
+        background: linear-gradient(135deg, #1f1e1d 9%, #060101 47%, #331c15 81%);
+        color: #fafafa;
+        img{
+            width: 40%;
+            margin-top: 50px;
+        }
+
+        .main-content{
+            margin-top: 25px;
+        }
+        ion-item{
+            background-color: transparent !important;
+        }
+
+        .title{
+            color: #fafafa !important;
+            text-align: left;
+        }
+
+        .instrct-text{
+            margin-top: 0.7rem;
+            text-align: right;
+            color: color($colors, primary);
+        }
+
+        .terms{
+            text-align: left;
+            margin-bottom: 10px;
+            color: color($colors, primary);
+        }
+
+        .form{
+            padding-right: 16px;
+        }
+
+        ion-fab[bottom] {
+            bottom: 25px;
+        }
+
+        .fab-md-pri-light:not(.creat-acc) {
+            color: #fff;
+            background-color: transparent;
+            -webkit-box-shadow: unset !important;
+            box-shadow: unset !important;
+        }
+
+        .actn-btns{
+            height: 2.5em;
+            font-size: 1.5rem;
+        }
+
+    }
+}

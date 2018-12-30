@@ -14,3 +14,119 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
+
+.splash{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background: #a39c91; /* Old browsers */
+    background: -moz-linear-gradient(-45deg, #a39c91 9%, #604141 47%, #423f3a 81%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(-45deg, #a39c91 9%,#604141 47%,#423f3a 81%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(135deg, #a39c91 9%,#604141 47%,#423f3a 81%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a39c91', endColorstr='#423f3a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+.fa {
+    font-weight: 400;
+}
+
+.faPrimary {
+    color: #28a54c;
+ }
+ .faSec {
+    color: #ff6600;
+ }
+ .faLight {
+    color: #31C0E6;
+ }
+ .faDark{
+    color: #f2c100;
+ }
+
+
+ //Loader
+
+ .loading-md .loading-wrapper{
+   padding: 0px;
+   background: transparent;
+   -webkit-box-shadow: unset !important;
+   box-shadow: unset !important;
+ }
+
+ page-list, page-inbox, page-profile {
+   ion-content{
+      background-color: #f5f5ff;
+   }
+ }
+
+
+
+ //SweetAlert Styles
+ .swal-button {
+   border-width: 1px;
+   border-style: solid;
+   border-color: #e91e63;
+   color: #e91e63;
+   background-color: transparent;
+   -webkit-box-shadow: none;
+   box-shadow: none;
+   border-radius: unset;
+ }
+
+ .swal-button--cancel{
+   border-color: color($colors, pri-light);
+   color: color($colors, pri-light);
+ }
+
+ .swal-modal {
+   //background-color: rgb(215,215,226);  //#e91e63
+   border-radius: 0;
+ }
+
+ .swal-button:active {
+      background-color: #e91e627e;
+   }
+
+ .swal-icon{
+   border-color: #e91e63;
+   span {
+      background-color: #e91e63 !important;
+   }
+ }
+
+ .swal-icon::before:not(.swal-icon--success), .swal-icon::after:not(.swal-icon--success){
+   background-color: #e91e63 !important;
+ }
+
+ .swal-icon--success{
+    border-color: #e91e63;
+ }
+
+ .swal-button:focus {
+   outline: none;
+   box-shadow: unset;
+}
+
+@media (max-width: 500px){
+   .swal-modal {
+      width: calc(100% - 40px);
+   }
+}
+
+
+//Utilities
+.toast-wrapper {
+   width: 90% !important;
+   border-radius: 50px;
+   text-align: center;
+   .toast-message{
+      padding: 1.3rem;
+   }
+}
+ 
+ 

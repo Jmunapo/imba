@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar  color="primary">
+    <ion-title text-center>
+        <ion-title>{{page_name}}</ion-title>
+    </ion-title>
+    <ion-buttons start>
+      <button ion-button (click)="dismiss()">
+        <span ion-text showWhen="ios">Close</span>
+        <ion-icon showWhen="android, windows" ios="ios-close" md="md-close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content padding>
+    <i primary class="fa fa-heart fa-lg"></i>
+</ion-content>

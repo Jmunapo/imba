@@ -1,0 +1,87 @@
+<ion-content no-padding>
+  <section class="page-content" padding>
+    <ion-row class="main-row">
+      <ion-col >
+          <img src="../../../assets/imgs/imbafinal.png">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col>
+          <h1 class="welcome">Welcome,</h1>
+          <h3 class="instrct-text">
+              Continue as a:
+          </h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="buttons-row">
+        <ion-col>
+          <div class="btns">
+            <p>
+              <button (click)="iamStudent()" class="actn-btns" ion-button color="primary" block>STUDENT</button>
+            </p>
+      
+            <p>
+              <button (click)="iamLandlord()"  class="actn-btns" ion-button color="secondary" outline block>LANDLORD</button>
+            </p>
+      
+          </div>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row class="terms-row">
+        <ion-col>
+          <div class="terms" padding>
+              <p>
+                By using IMBA, you agree to IMBA's
+                <a tappable (click)="openTerms()" class="conditons">Terms of Use</a>
+                and
+                <a tappable (click)="openPrivacy()" class="conditions">Privacy Policy.</a>
+              </p>
+          </div>
+        </ion-col>
+      </ion-row>
+
+      
+  </section>
+
+  
+  
+</ion-content>
+
+
+<!-- 
+
+  <div class="bg-img"></div>
+  
+  <div class="img" padding>
+      <img src="../../../assets/imgs/imbafinal.png" id="imgPlacement">
+  </div>
+  <div class="content" padding>
+    <h1 class="welcome">Welcome,</h1>
+    <h3 class="instrct-text">
+        Continue as a:
+    </h3>
+
+    <div class="btns">
+      <p>
+        <button (click)="iamStudent()" class="actn-btns" ion-button color="primary" block>STUDENT</button>
+      </p>
+
+      <p>
+        <button (click)="iamLandlord()"  class="actn-btns" ion-button color="secondary" outline block>LANDLORD</button>
+      </p>
+
+    </div>
+
+    <div class="terms">
+        <p>
+          By using IMBA, you agree to IMBA's
+          <a href="" class="conditons">Terms of Use</a>
+          and
+          <a href="" class="conditions">Privacy Policy.</a>
+        </p>
+    </div>
+  </div>
+ -->
+

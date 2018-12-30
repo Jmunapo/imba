@@ -1,0 +1,42 @@
+<ion-content no-padding>
+    
+    
+    <img src="../../../assets/imgs/imbafinal.png" id="imgPlacement">
+
+    <div class="content" padding>
+      <h3 padding color="pri-light" text-left>REGISTER</h3>
+      <div class="form">
+        <ion-item color="pri-light">
+          <ion-label floating>Full name</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+
+        <ion-item color="pri-light">
+          <ion-label floating>Email/Phone</ion-label>
+          <ion-input type="text"></ion-input>
+        </ion-item>
+      
+        <ion-item color="pri-light">
+          <ion-label floating>Password</ion-label>
+          <ion-input [type]="(!pwdtype)? 'password': 'text'" clearOnEdit="false"></ion-input>
+          <button ion-button clear item-end (click)="pwdtype = !pwdtype" style="height:32px;">
+              <ion-icon [name]="(!pwdtype)? 'eye': 'eye-off'" style="font-size:20px;"></ion-icon>
+            </button>
+        </ion-item>
+
+        <p style="text-align: center;">
+          <button (click)="landlordCreatAcc()"  class="actn-btns" ion-button color="secondary" outline>
+            CREATE ACCOUNT
+          </button>
+        </p>
+      </div>
+    </div>
+
+    <ion-fab left top>
+      <button ion-fab color="pri-light" (click)="closeCreate()"><ion-icon name="close"></ion-icon></button>
+    </ion-fab>
+    
+
+  </ion-content>
+  
+  

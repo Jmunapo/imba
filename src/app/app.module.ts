@@ -2,6 +2,7 @@ import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
+import { HttpClientModule } from "@angular/common/http";
 
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
@@ -15,6 +16,8 @@ import { LandlordLoginPage } from '../pages/account/landlord-login/landlord-logi
 import { LandlordRegisterPage } from '../pages/account/landlord-register/landlord-register';
 import { AuthenticationProvider } from '../providers/authentication/authentication';
 import { IonicStorageModule } from "@ionic/storage";
+import { ChatServiceProvider } from '../providers/chat-service/chat-service';
+import { EmojiProvider } from '../providers/emoji/emoji';
 
 @NgModule({
   declarations: [
@@ -29,8 +32,12 @@ import { IonicStorageModule } from "@ionic/storage";
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicStorageModule.forRoot(),
-    IonicModule.forRoot(MyApp)
+    IonicModule.forRoot(MyApp,{
+      tabsHideOnSubPages:true,
+      preloadModules: true
+    }),
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -47,7 +54,9 @@ import { IonicStorageModule } from "@ionic/storage";
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    AuthenticationProvider
+    AuthenticationProvider,
+    ChatServiceProvider,
+    EmojiProvider
   ]
 })
 export class AppModule {}

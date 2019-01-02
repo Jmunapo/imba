@@ -10,15 +10,17 @@ import swal from 'sweetalert';
 })
 export class InboxPage {
 
+  toUser : {toUserId: string, toUserName: string};
+
   constructor(public navCtrl: NavController, public navParams: NavParams) {
+    this.toUser = {
+      toUserId:'210000198410281948',
+      toUserName:'Joemags'
+    }
   }
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad InboxPage');
-  }
-
-  sayHiMom(){
-    swal("", "success", "success");
   }
 
 }

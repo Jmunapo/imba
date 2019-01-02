@@ -129,6 +129,12 @@ export class DashboardPage {
 
   addHouse(){
     console.log("Adding house");
+    let toast = this.toastCtrl.create({
+      message: 'Coming Soon',
+      duration: 3000,
+      position: 'middle'
+    });
+    toast.present();
   }
 
   viewHouse(houseId: any){

@@ -1,3 +1,23 @@
 page-inbox {
 
+    .new-message{
+        padding-left: 0;
+        &::before {
+            content: '';
+            background-color: rgba(78, 191, 226, 0.8);
+            width: 5px;
+            min-height: 70px;
+            margin-right: 11px;
+        }
+    }
+
+    ion-note{
+        font-size: 1.3rem;
+        font-weight: 100;
+
+        &.new-time{
+            color: rgba(78, 191, 226, 0.8);
+        }
+    }
+
 }

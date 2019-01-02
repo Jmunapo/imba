@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { NavController, NavParams, ModalController, Events } from 'ionic-angular';
-import { TabsPage } from '../../tabs/tabs';
+import { NavController, NavParams, ModalController, Events, ToastController } from 'ionic-angular';
 import { LandlordLoginPage } from '../landlord-login/landlord-login';
 import { Storage } from '@ionic/storage';
 import { AuthenticationProvider } from '../../../providers/authentication/authentication';
+
+import swal from 'sweetalert';
 
 @Component({
   selector: 'page-welcome',
@@ -15,7 +16,8 @@ export class WelcomePage {
     private storage: Storage,
     private events: Events,
     private auth: AuthenticationProvider,
-    public modalCtrl: ModalController) {
+    public modalCtrl: ModalController,
+    public toastCtrl: ToastController) {
   }
 
   ionViewDidLoad() {
@@ -33,8 +35,10 @@ export class WelcomePage {
   }
 
   iamStudent(){
-    this.otsSelect("iamStudent");
-    //this.navCtrl.setRoot(TabsPage);
+    //this.otsSelect("iamStudent");
+    swal("Hang on! Page is coming Soon.", {
+      icon: "info",
+    });
   }
 
   iamLandlord(){

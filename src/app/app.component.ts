@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { Platform, App, Events } from 'ionic-angular';
+import { Platform, App, Events, ToastController } from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
@@ -28,10 +28,12 @@ export class MyApp {
   //rootPage:any = LandlordRegisterPage
 
   showSplash = true;
+  showPageSplash = false;
 
   constructor(platform: Platform, 
     private appCtrl: App,
     private events: Events,
+    private toastCtrl: ToastController,
     private auth: AuthenticationProvider,
     private loc: Location,
     statusBar: StatusBar, splashScreen: SplashScreen) {
@@ -47,6 +49,17 @@ export class MyApp {
           })
         }else{
           this.showSplash = false;
+        }
+      })
+
+      events.subscribe("coming:soon", (show, timeOut = 3000)=>{
+        if(show){
+          let toast = this.toastCtrl.create({
+            message: 'Coming Soon',
+            duration: timeOut,
+            position: 'middle'
+          });
+          toast.present();
         }
       })
 

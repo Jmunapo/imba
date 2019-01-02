@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, LoadingController } from 'ionic-angular';
 import { LandlordRegisterPage } from '../landlord-register/landlord-register';
 import { AuthenticationProvider } from '../../../providers/authentication/authentication';
+import { Storage } from '@ionic/storage';
 
 @Component({
   selector: 'page-landlord-login',
@@ -11,6 +12,7 @@ export class LandlordLoginPage {
   
 
   constructor(public navCtrl: NavController,
+    private storage: Storage,
     public loadingCtrl: LoadingController,
     private auth: AuthenticationProvider) {
   }
@@ -52,7 +54,9 @@ export class LandlordLoginPage {
   }
 
   closeLogin(){
+    this.storage.remove("OTS");
     this.navCtrl.pop();
+
   }
 
 }

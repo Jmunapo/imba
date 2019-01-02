@@ -1,3 +1,101 @@
 page-list {
+    .not-available{
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%)
+    }
+    .available{
+        .thumbnail{
+          min-height: 120px;
+          width: 50%;
+          margin: 0;
+          margin-top: 1px;
+          img{
+            width: unset;
+            height: unset;
+          }
+        }
+        .input-wrapper{
+         display: none; 
+        }
+        .item-inner {
+          padding: 0;
+          padding-right: 0 !important;
+          margin-top: 1px;
+          background-color: #eb5e45;
+        }
+        .list-content{
+          margin: 0;
+          .grid{
+            padding: 0;
+            .title, .desc {
+              padding: 0 0 3px 5px;
+            }
+            .title > h2 {
+              font-weight: bolder;
+              text-transform: uppercase;
+            }
+            .desc > p{
+              color: color($colors, secondary);
+            }
+            .features {
+              padding-top: 0;
+              padding-right: 0;
+              p{
+                color: #1c1910;
+                line-height: 1.3rem;
+                font-weight: bold;
+              }
+            }
+            .action{
+              padding-top: 0;
+              button {
+                border-radius: 50%;
+                width: 36px;
+                background-color: #ff3b24;
+                -webkit-box-shadow: unset;
+                box-shadow: unset;
+              }
+            }
+          }
+        }
+    }
 
+    .price-ribbon{
+      width: 125px;
+      height: 20px;
+      position: absolute;
+
+      background: linear-gradient(to left, #e91e63, #ee7878);
+      top: 15px;
+      right: calc(50% - 4px);
+      &:before{
+        content: "";
+        position: absolute;
+        top: 20px;
+        right: 0;
+        border-left: 2px solid #e91e63;
+        border-right: 2px solid transparent;
+        border-top: 2px solid #e91e63;
+        border-bottom: 2px solid transparent;
+      }
+
+      font-size: 1.4rem;
+      font-weight: 600;
+      text-align: center;
+      padding-top: 2px;
+      color: #78ff00;
+    }
+
+    .f-bottom{
+      text-align: left;
+      top: 10px;
+      left: 2px;
+    }
+    .f-top{
+      text-align: right;
+      font-size: 3rem;
+      top: -5px;
+    }
 }

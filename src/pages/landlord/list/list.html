@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar  color="primary">
+  <ion-navbar  color="pri-dark">
     <ion-title text-center>My Listings</ion-title>
   </ion-navbar>
 
@@ -10,7 +10,7 @@
 <ion-content>
   <div class="not-available"  text-center *ngIf="notAvailable">
     <h6>You have no listed rooms</h6>
-    <button ion-button outline color="primary" (click)="addListing()">
+    <button ion-button outline color="pri-dark" (click)="addListing()">
         <i class="fa fa-plus fa-fw"></i>
       Add New Listing</button>
   </div>
@@ -19,7 +19,7 @@
       <ion-list *ngIf="scrnWidth <= 620">
         <ion-item no-padding *ngFor="let a of [1,2,3,4,5,6,7]">
             <ion-thumbnail item-start class="thumbnail">
-              <div class="price-ribbon">$40 per Room</div>
+              <div class="price-ribbon ribbon-list">$40 per Room</div>
               <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
             </ion-thumbnail>
             <div class="list-content" item-end>
@@ -53,8 +53,29 @@
       <ion-row>
         <ion-col col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of newsItems">
           <ion-card>
-            <ion-card-header>{{ item.title }}</ion-card-header>
-            <ion-card-content>{{ item.text }}</ion-card-content>
+            <div class="price-ribbon ribbon-card">$40 per Room</div>
+            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"/>
+            <ion-card-content class="list-card-content">
+              <ion-card-title>
+                  {{ item.title }}
+                </ion-card-title>
+              <p>
+                  {{ item.text }}
+              </p>
+
+              <ion-row>
+                <ion-col col-8>
+                    <p>&middot; Wi-Fi</p>
+                    <p>&middot; Kitchen</p>
+                    <p>&middot; Parking space</p>
+                </ion-col>
+                <ion-col class="action" col-4 center text-right margin-vertical >
+                  <button ion-button icon-only (click)="viewListing()">
+                      <ion-icon name="eye"></ion-icon>
+                  </button>
+                </ion-col>
+              </ion-row>
+            </ion-card-content>
           </ion-card>
         </ion-col>
       </ion-row>
@@ -62,7 +83,7 @@
   </div>
 
   <ion-fab right bottom *ngIf="!notAvailable">
-    <button ion-fab class="creat-acc" color="secondary" (click)="addListing()">
+    <button ion-fab class="creat-acc" color="sec-dark" (click)="addListing()">
         <span class="fa-stack fa-lg">
           <i class="fa fa-home fa-stack-1x f-top"></i>
           <i class="fa fa-plus fa-stack-1x f-bottom"></i>

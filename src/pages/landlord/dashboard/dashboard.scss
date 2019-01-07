@@ -14,14 +14,66 @@ page-dashboard {
         background: -webkit-linear-gradient(top, rgba(119,35,35,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
         background: linear-gradient(to bottom, rgba(119,35,35,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
         filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#772323', endColorstr='#3f4c6b',GradientType=0 ); /* IE6-9 */
-        min-height: 40%;
+        //min-height: 40%;
         color: color($colors, secondary);
-        hr{
-            background-color: rgb(181, 150, 11);
-            display: block;
-            width: 100%;
+
+        .bge{
+            position: absolute;
+            top: 8px;
+            right: 16px;
+            &.pay{
+                background-color: #7030A0;
+            }
+            &.risk {
+                background-color: #C00000;
+            }
         }
+
+        .icon {
+            .pay{
+                color: #c06cff;
+            }
+            .expe{
+                color: #009999;
+            }
+            .fore{
+                color: #F36326;
+            }
+            .risk {
+                color: #ff5b5b;
+            }
+        }
+
+
+        
     }
+    
+   
+
+      .home-g{
+          .item-inner{
+              padding-right: unset !important;
+              border-bottom: unset !important;
+          }
+          ion-icon{
+              color: #c3c4ce;
+          }
+      }
+
+      @media only screen and (max-width: 768px) {
+        .grid-one{
+            border-bottom: 0.45px solid color($colors, pri-light);
+            border-right: 0.45px solid color($colors, pri-light)
+        }
+        .grid-two{
+            border-bottom: 0.45px solid color($colors, pri-light);
+            border-right: unset;
+        }
+        .grid-three{
+            border-right: 0.25px solid color($colors, pri-light);
+        }
+      }
+
     .add-house{
         border: 1px solid rgb(138, 126, 126);
         border-radius: 5px;
@@ -38,54 +90,75 @@ page-dashboard {
         }
     }
 
+    .icon{
+        ion-icon{
+            font-size: 4em;
+        }
+    }
+
+    
+    .home-title{
+        .top-title{
+            font-size: 1.9rem;
+            font-weight: bold;
+            line-height: 2;
+            color: color($colors, primary);
+        }
+        ion-label{
+            margin: 5px 8px 10px 0;
+            .view-all{
+                color: color($colors, primary);
+                padding-top: 10px;
+            }
+        }
+    }
+
+    .top-rated{
+        ion-card-title{
+            margin: unset;
+            font-size: 2rem;
+            font-weight: bold;
+            i{
+                font-size: 1.5rem;
+            }
+        }
+
+        .street{
+            font-weight: 700;
+            font-size: 1.5rem;
+        }
+        .avail{
+            color: color($colors, primary);
+            font-weight: 600;
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     .img {
         img{
             margin: auto;
             width: 20%
         }
     }
-      
-      .top-r{
-        ion-card-content {
-            padding: 0 5px;
-        }
-
-        ion-col {
-            padding: 0px;
-        }
-
-        ion-card{
-            padding-bottom: 10px;
-        }
- 
-      }
- 
-      .home-title{
-          margin-bottom: unset;
-          h5{
-            margin: 2px 0;
-            font-size: 1.9rem;
-            font-weight: bold;
-            line-height: 2;
-          }
-        
-      }
-
-      .home-card-content{
-          padding-bottom: 5px;
-        ion-card-title{
-            font-size: 1.6rem;
-            line-height: 1;
-            margin: unset;
-            padding: 5px 0;
-            text-align: center;
-            font-weight: bold;
-        }
-        ion-note{
-            color: #717171;
-            display: block;
-        }
-      }
 
       .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
         height: 15px;

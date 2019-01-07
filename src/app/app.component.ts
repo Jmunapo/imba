@@ -17,13 +17,17 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
  * @Packages
  * https://sweetalert2.github.io/
  * Transition https://ionicacademy.com/ionic-native-page-transitions/
+ * https://magicmockups.com/media/screen/guest/96/7503dd4c83a14580a6ec658c4f660785_10_1600.jpg
+ * https://material.io/tools/color/#!/?view.left=0&view.right=1&primary.color=b22b1c&secondary.color=bdbdbd&primary.text.color=d8dbcd&secondary.text.color=1c1910
+ * 
  */
 
 @Component({
   templateUrl: 'app.html'
 })
 export class MyApp {
-  rootPage:any = WelcomePage;
+  //rootPage:any = WelcomePage; //production
+  rootPage: any = "LandlordTabsPage"
 
   //rootPage:any = LandlordRegisterPage
 
@@ -81,5 +85,13 @@ export class MyApp {
         })
       });
     });
+  }
+
+  open(){
+    this.events.publish("coming:soon", true);
+  }
+
+  logout(){
+    this.auth.landlordLogout();
   }
 }

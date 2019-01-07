@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IonicPage, NavController, NavParams } from 'ionic-angular';
+import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { AuthenticationProvider } from '../../../providers/authentication/authentication';
 
 /**
@@ -17,6 +17,7 @@ import { AuthenticationProvider } from '../../../providers/authentication/authen
 export class ProfilePage {
 
   constructor(public navCtrl: NavController, 
+    public alertCtrl: AlertController,
     private auth: AuthenticationProvider,
     public navParams: NavParams) {
   }
@@ -28,6 +29,36 @@ export class ProfilePage {
   logout(){
     //this.appCtrl.getRootNav().setRoot(WelcomePage);
     this.auth.landlordLogout();
+  }
+
+  editimage(){
+    console.log("Editing Image");
+  }
+  
+  editText(what, val = ""){
+    const prompt = this.alertCtrl.create({
+      message: `Editing ${what}`,
+      inputs: [
+        {
+          name: 'edit',
+          placeholder: 'Enter Text',
+          value: val
+        },
+      ],
+      buttons: [
+        {
+          text: 'Cancel'
+        },
+        {
+          text: 'Save',
+          handler: data => {
+            console.log('Saved clicked');
+            console.log(data);
+          }
+        }
+      ]
+    });
+    prompt.present();
   }
 
 }

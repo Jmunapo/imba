@@ -1,54 +1,64 @@
-<!-- <ion-header no-border>
+<ion-header no-border no-shadow>
 
-  <ion-navbar color="trans">
-    <ion-title text-center color="dark">Home</ion-title>
+  <ion-navbar color="pri-dark">
+    <ion-title text-center>Dashboard</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="SweetAlert()">
-        <ion-icon name="options"></ion-icon>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="ios-settings-outline"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
 
 </ion-header>
- -->
 
-<ion-content fullscreen no-padding>
-  <section class="stats" no-padding padding-bottom>
-    <ion-grid padding>
-        <ion-row>
-          <ion-col col-4 text-center>
-            <h3>$500</h3>
-            <p>Total Profit</p>
-          </ion-col>
-          <ion-col col-8>
-            <h5>Total Income <span>$1200</span> </h5>
-            <hr>
-            <h5>Total Expenses <span>$700</span> </h5>
-          </ion-col>
+<ion-content no-padding>
+  <section class="stats" no-padding padding-bottom align-items-center>
+    <ion-grid padding >
+        <ion-row text-center>
+          <button (click)="addHouse()" ion-item col-6 col-md-3 class="home-g grid-one" text-center color="trans" no-padding>
+              <div class="icon">
+                  <ion-icon name="ios-cash" class="pay" ></ion-icon>
+              </div>
+              <div class="home-text">
+                <h5>ACCEPT PAYMENT</h5>
+              </div>
+              <ion-badge class="bge pay">7</ion-badge>
+          </button>
+
+          <button (click)="addHouse()" ion-item col-6 col-md-3 class="home-g grid-two" text-center color="trans" no-padding>
+                        
+              <div class="icon">
+                  <ion-icon color="danger" class="risk" name="ios-warning"></ion-icon>
+              </div>
+              <div class="home-text">
+                <h5>RISKS</h5>
+              </div>
+              <ion-badge class="bge risk">5</ion-badge>
+          </button>
+
+          <button (click)="addHouse()" ion-item col-6 col-md-3 class="home-g grid-three" text-center color="trans" no-padding>
+              <div class="icon">
+                  <ion-icon name="ios-hammer" class="fore" ></ion-icon>
+              </div>
+              <div class="home-text">
+                <h5>FIND FOREMAN</h5>
+              </div>
+          </button>
+
+          <button (click)="addHouse()" ion-item col-6 col-md-3 class="home-g grid-four" text-center color="trans" no-padding>
+            <div class="icon">
+                <ion-icon color="danger" class="expe" name="md-trending-down"></ion-icon>
+            </div>
+            <div class="home-text">
+              <h5>ADD EXPENSE</h5>
+            </div>
+          </button>
         </ion-row>
       </ion-grid>
-      <ion-card>
-        <ion-card-header>
-          Income Vs Expenses
-          <ion-list float-right>
-              <ion-item style="width: 100%">
-                <ion-select [(ngModel)]="period" style="min-width: 100%; padding-top: 0">
-                  <ion-option value="monthly">Monthly</ion-option>
-                  <ion-option value="quaterly">Quaterly</ion-option>
-                  <ion-option value="yearly">Yearly</ion-option>
-                </ion-select>
-              </ion-item>
-            </ion-list>
-
-        </ion-card-header>
-        <ion-card-content>
-          <canvas #lineCanvas></canvas>
-        </ion-card-content>
-      </ion-card>
   </section>
   <ion-card class="add-house" (tap)="addHouse()">
       <ion-card-header>
-        Add House
+        ADD HOUSE
       </ion-card-header>
       <hr>
 
@@ -56,40 +66,68 @@
       <div class="img">
           <img src="../../../assets/imgs/house.svg">
       </div>
-      <p color="pri-light">Start by adding a house</p>
+      <p color="pri-light">Start by adding available rooms</p>
     </ion-card-content>
   </ion-card>
-  <ion-list-header class="home-title">
-    <h5 >Top-Rated</h5> 
-    <p>Find inspiration from houses rated by students</p>
-  </ion-list-header>
-  <ion-grid >
-    <ion-row class="top-r">
-      <ion-col col-6 col-md-6 col-lg-4 col-xl-3 *ngFor="let i of [1,2,3,4]">
-        <ion-card (tap)="viewHouse(i)">
-          <img src="../../../assets/imgs/house.svg"/>
-          
-          <ion-card-content class="home-card-content">
-            <ion-card-title>
-              Rujeko C
-            </ion-card-title>
-            <p text-wrap>
-              {{(text.length > 40)? text.substring(0,40)+'...' : text}}
-            </p>
-            <ion-note>$45 room</ion-note>
-            <ionic3-star-rating float-left
-                activeIcon = "ios-star"
-                defaultIcon = "ios-star-outline"
-                activeColor = "#e91e63" 
-                defaultColor = "red"
-                readonly="true"
-                rating="5">
-          </ionic3-star-rating>
-          <span class="rating" float-left>300</span>
-          </ion-card-content>
-        </ion-card>
-      </ion-col>
-    </ion-row>
-    <button ion-button block outline padding>View all top-rated</button>
-  </ion-grid>
+
+    <ion-item-divider color="light" class="home-title" (tap)="addHouse()">
+      <p float-end class="view-all" >View All &nbsp;
+        <ion-icon name="ios-arrow-forward-outline"></ion-icon>
+      </p>
+      <h5 class="top-title">Top-Rated</h5> 
+      <p>Find inspiration from houses rated by students</p>
+    </ion-item-divider>
+
+    <section class="top-rated">
+      <ion-grid no-padding>
+        <ion-row>
+          <ion-col col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let a of [1,2,3]">
+              <ion-card>
+                <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"/>
+            
+                <ion-card-content no-padding padding-right padding-left>
+                  <ion-card-title>
+                      Mutare <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Hobhouse 3
+                  </ion-card-title>
+        
+                  <ion-grid no-padding>
+                    <ion-row>
+                      <ion-col col-8 text-left>
+                        <p class="street">Tangwena street</p>
+                        <p class="avail"><i class="fa fa-ellipsis-v" aria-hidden="true"></i> 4 Shareable rooms available</p>
+                      </ion-col>
+                      <ion-col text-center>
+                        <ion-note>Start From</ion-note>
+                        <p>45/Month</p>
+                      </ion-col>
+                    </ion-row>
+                  </ion-grid>
+                  
+                </ion-card-content>
+            
+                <ion-row no-padding>
+                  <ion-col text-center>
+                    <ionic3-star-rating
+                        activeIcon = "ios-star"
+                        defaultIcon = "ios-star-outline"
+                        activeColor = "#e91e63" 
+                        defaultColor = "red"
+                        readonly="true"
+                        rating="4">
+                      </ionic3-star-rating>
+                  </ion-col>
+                  <ion-col text-left col-3>
+                      <p style="padding-top: 6px">300</p>
+                  </ion-col>
+                  <ion-col text-right>
+                    <button ion-button outline color="sec-dark" no-shadow text-capitalize>
+                      view details
+                    </button>
+                  </ion-col>
+                </ion-row>
+              </ion-card>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </section>
 </ion-content>

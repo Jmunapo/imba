@@ -15,72 +15,50 @@
       Add New Listing</button>
   </div>
 
-  <div class="available" *ngIf="!notAvailable">
-      <ion-list *ngIf="scrnWidth <= 620">
-        <ion-item no-padding *ngFor="let a of [1,2,3,4,5,6,7]">
-            <ion-thumbnail item-start class="thumbnail">
-              <div class="price-ribbon ribbon-list">$40 per Room</div>
-              <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940">
-            </ion-thumbnail>
-            <div class="list-content" item-end>
-              <ion-grid>
-                <ion-row>
-                  <ion-col class="title" col-12>
-                    <h2>Runyararo West {{a}}</h2>
-                  </ion-col>
-                  <ion-col class="desc" col-12>
-                    <p>4 Shareable rooms available</p>
-                  </ion-col>
-                </ion-row>
-                <ion-row>
-                    <ion-col class="features" col-8>
-                      <p>&middot; Wi-Fi</p>
-                      <p>&middot; Kitchen</p>
-                      <p>&middot; Parking space</p>
+  <section class="available" *ngIf="!notAvailable">
+    <ion-grid no-padding>
+      <ion-row>
+        <ion-col col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let a of [1,2]">
+            <ion-card>
+              <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"/>
+          
+              <ion-card-content no-padding padding-right padding-left>
+                <ion-card-title>
+                    Mutare <i class="fa fa-ellipsis-v" aria-hidden="true"></i> Hobhouse 3
+                </ion-card-title>
+      
+                <ion-grid no-padding>
+                  <ion-row>
+                    <ion-col col-8 text-left>
+                      <p class="street">Tangwena street</p>
+                      <p class="avail"><i class="fa fa-ellipsis-v" aria-hidden="true"></i> 4 Shareable rooms available</p>
                     </ion-col>
-                    <ion-col class="action" col-4 text-center>
-                      <button ion-button icon-only (click)="viewListing()">
-                          <ion-icon name="eye"></ion-icon>
-                      </button>
+                    <ion-col text-center>
+                      <ion-note>Start From</ion-note>
+                      <p>45/Month</p>
                     </ion-col>
                   </ion-row>
-              </ion-grid>
-            </div>
-          </ion-item>
-      </ion-list>
-
-    <ion-grid *ngIf="scrnWidth > 620">
-      <ion-row>
-        <ion-col col-12 col-md-6 col-lg-4 col-xl-3 *ngFor="let item of newsItems">
-          <ion-card>
-            <div class="price-ribbon ribbon-card">$40 per Room</div>
-            <img src="https://images.pexels.com/photos/106399/pexels-photo-106399.jpeg?auto=compress&cs=tinysrgb&h=650&w=940"/>
-            <ion-card-content class="list-card-content">
-              <ion-card-title>
-                  {{ item.title }}
-                </ion-card-title>
-              <p>
-                  {{ item.text }}
-              </p>
-
-              <ion-row>
-                <ion-col col-8>
-                    <p>&middot; Wi-Fi</p>
-                    <p>&middot; Kitchen</p>
-                    <p>&middot; Parking space</p>
+                </ion-grid>
+                
+              </ion-card-content>
+          
+              <ion-row no-padding class="btn-row">
+                <ion-col text-center>
+                  <button ion-button outline color="sec-dark" no-shadow text-capitalize>
+                    Edit
+                  </button>
                 </ion-col>
-                <ion-col class="action" col-4 center text-right margin-vertical >
-                  <button ion-button icon-only (click)="viewListing()">
-                      <ion-icon name="eye"></ion-icon>
+                <ion-col text-center>
+                  <button ion-button outline color="sec-dark" no-shadow text-capitalize>
+                    view details
                   </button>
                 </ion-col>
               </ion-row>
-            </ion-card-content>
-          </ion-card>
+            </ion-card>
         </ion-col>
       </ion-row>
     </ion-grid>
-  </div>
+  </section>
 
   <ion-fab right bottom *ngIf="!notAvailable">
     <button ion-fab class="creat-acc" color="sec-dark" (click)="addListing()">

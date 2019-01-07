@@ -10,4 +10,57 @@
         <img src="../assets/loader/loader.svg">
     </div>
 </div>
-<ion-nav [root]="rootPage"></ion-nav>
+
+
+
+<ion-menu [content]="content" side="right">
+    <ion-content>
+        <ion-item-group>
+            <ion-item-divider color="light">Quick Settings</ion-item-divider>
+            <ion-item class="quick-set">
+                <ion-icon name="ios-notifications-outline" item-start></ion-icon>
+                <ion-label>Notifications</ion-label>
+                <ion-toggle checked="true" (ionChange)="open()"></ion-toggle>
+            </ion-item>
+        </ion-item-group>
+
+        <ion-item-group class="add-options">
+            <ion-item-divider color="light">Additional Options</ion-item-divider>
+            <button ion-item (click)="open()">
+                <ion-icon name="ios-card-outline" item-start></ion-icon>
+                Payment Methods
+            </button>
+            <button ion-item (click)="open()">
+                <ion-icon name="ios-paper-outline" item-start></ion-icon>
+                Reports
+            </button>
+        </ion-item-group>
+
+        <hr>
+        <ion-list class="quick-set">
+            <button ion-item (click)="open()">
+                <ion-icon name="ios-star-half-outline" item-start></ion-icon>
+                Rate
+            </button>
+        </ion-list>
+    </ion-content>
+    <ion-footer no-border>
+       <ion-grid>
+           <ion-row>
+               <ion-col>
+                   <button ion-button block outline class="faq" clear menuClose (click)="open()">
+                        Help &nbsp;<ion-icon name="ios-help-circle-outline"></ion-icon>
+                   </button>
+               </ion-col>
+               <ion-col>
+                    <button ion-button block outline icon-end clear text-capitalize menuClose (click)="logout()">
+                        Logout &nbsp;<ion-icon name="ios-log-out"></ion-icon> 
+                    </button>
+               </ion-col>
+           </ion-row>
+       </ion-grid>
+    </ion-footer>
+</ion-menu>
+
+
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

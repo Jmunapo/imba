@@ -9,8 +9,8 @@
   <ion-navbar color="pri-dark">
     <ion-title text-center>Profile</ion-title>
     <ion-buttons end>
-      <button ion-button icon-only (click)="logout()">
-        <i class="fa fa-sign-out fa-2x" aria-hidden="true"></i>
+      <button ion-button icon-only menuToggle>
+          <ion-icon name="ios-settings-outline"></ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -18,6 +18,33 @@
 </ion-header>
 
 
-<ion-content padding>
+<ion-content no-padding>
+  <div class="profile-img" text-center padding>
+      <div class="tap-ribbon">Tap to edit</div>
+      <img src="assets/imgs/user.png" (click)="editimage()" >
+      <h3 color="faPrimary">Josiah Munapo</h3>
+      <p class="verified">
+        <i class="fa fa-shield fa-fw faPrimary" aria-hidden="true"></i>
+        Verified
+      </p>
+  </div>
+
+  <div class="profile-info" padding>
+    <h4 class="info" (tap)="editText('Phone', '+263775696233')">
+        <i class="fa fa-phone fa-fw faDark" aria-hidden="true"></i>
+        Phone
+    </h4>
+    <span>+263775696233</span>
+    <h4 class="info" (tap)="editText('Address', '1140 Chikanga Phase II, Mutare')">
+        <i class="fa fa-map-marker fa-fw faDark" aria-hidden="true"></i>
+        Address
+    </h4>
+    <span>1140 Chikanga Phase II, Mutare</span>
+    <h4 class="info">
+        <i class="fa fa-tasks fa-fw faDark" aria-hidden="true"></i>
+        My Listings
+    </h4>
+    <span>7 Rooms</span>
+  </div>
 
 </ion-content>

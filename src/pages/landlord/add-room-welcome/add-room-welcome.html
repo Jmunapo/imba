@@ -1,0 +1,32 @@
+<!--
+  Generated template for the AddRoomWelcomePage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header no-border no-shadow>
+
+  <ion-navbar transparent>
+    <ion-title text-right>Let's add your rooms</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content no-padding>
+  <div class="progress" *ngIf="progressList.length">
+    <ul padding>
+      <li padding-bottom *ngFor="let step of progressList">
+          <ion-icon [class.completed]="step.done" class="prog-icon" [name]="step.name" color="primary" item-start></ion-icon>          
+          <span padding-left class="prog-item"> {{step.title}} </span>
+      </li>
+    </ul>
+  </div>
+
+</ion-content>
+
+<ion-footer>
+  <button ion-button block text-capitalize> 
+    Let's Begin
+  </button>
+</ion-footer>

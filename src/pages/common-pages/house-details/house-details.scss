@@ -1,0 +1,181 @@
+page-house-details {
+    ion-content{
+        .scroll-content{
+            padding-top: 0 !important;
+        }
+
+        .image-slider{
+            height: 200px;
+            background: rgb(119,35,35); /* Old browsers */
+            background: -webkit-linear-gradient(top, rgba(119,35,35,1) 0%,rgba(63,76,107,1) 100%); /* Chrome10-25,Safari5.1-6 */
+            background: linear-gradient(to bottom, rgba(119,35,35,1) 0%,rgba(63,76,107,1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        
+        }
+
+        .swiper-pagination-bullet-active {
+            background: color($colors, primary);
+        }
+
+        .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] {
+            height: 15px;
+            width: 15px;
+          }
+    
+          .ionic3-star-rating[_ngcontent-c0] .button[_ngcontent-c0] ion-icon[_ngcontent-c0] {
+            font-size: 15px;
+        }
+    
+          .rating{
+            margin-top: 5px;
+            margin-left: 5px;
+            font-weight: bold;
+          }
+
+          ion-badge{
+            border-radius: 15px !important;
+          }
+
+        ion-card{
+            -webkit-box-shadow: unset !important;
+            box-shadow: unset !important;
+        }
+
+        .title{
+            h5{
+                font-size: 2rem;
+                font-weight: bold;
+                i{
+                    font-size: 1.5rem;
+                }
+            }
+            margin: unset;
+        }
+    }
+
+    .chat-col, .book-col{
+        border-top: 1px solid color($colors, pri-dark);
+        background-color: #fff;
+    }
+
+    .book-col{
+        border-left: 1px solid color($colors, pri-dark);
+        &.can-book{
+            background-color: color($colors, primary); 
+        }
+    }
+    .landlord-action{
+        background-color: color($colors, primary);
+        button{
+            -webkit-box-shadow: unset !important;
+            box-shadow: unset !important;
+        }
+    }
+
+    .avai-title{
+        color: color($colors, primary);
+        font-weight: 600;
+        margin-bottom: 0;
+    }
+
+    .details-row {
+        p{
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        ion-grid{
+            padding: 0;
+        }
+        ion-item{
+            padding-left: 0;
+            .item-inner{
+                padding-right: 0 !important;
+            }
+            ion-checkbox{
+                margin-right: 0 !important;
+            }
+        }
+    }
+
+    .aminities-row> ion-col{
+        border: 1px solid #8b8b8b;
+        border-radius: 5px;
+        .aminities-features{
+            .icon{
+                font-size: 4rem;
+                color: #009999;
+                margin: 0;
+            }
+            .name{
+                font-size: 1.2rem;
+                margin: 0;
+                color: #c5c5c5;
+            }
+        }
+    }
+
+    .details-features > ion-col{
+        border: 1px solid #8b8b8b;
+        border-radius: 5px;
+        margin: 3px;
+
+        &:first-of-type{
+            margin-left: 0;
+        }
+        &:last-of-type{
+            margin-right: 0;
+        }
+
+
+        .num{
+            font-size: 1.8rem;
+            font-weight: 600;
+            float: left;
+        }
+        .icon{
+            float: left;
+            font-size: 2rem;
+            width: 100%;
+            color: #009999;
+        }
+        ion-note{
+            font-size: 1.2rem;
+            float: left;
+        }
+    }
+
+    .more-details-row > ion-col{
+        border: 1px solid #8b8b8b;
+        border-radius: 5px;
+        p:not(.more-title){
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
+        ion-grid{
+            padding: 0;
+        }
+
+        .details-info{
+            background-color: #d6d6d6;
+            &:nth-child(2n){
+                background-color: #ffffff;
+            }
+            &:last-of-type{
+                padding-bottom: 5px;
+            }
+        }
+    }
+
+    .feature-title{
+        font-size: 1.6rem;
+        font-weight: 600;
+    }
+
+    .location-row{
+        .map{
+            height: 180px;
+            background-color: #d6d6d6;
+        }
+    }
+    
+
+}

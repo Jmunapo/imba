@@ -18,6 +18,8 @@ import { AuthenticationProvider } from '../providers/authentication/authenticati
 import { IonicStorageModule } from "@ionic/storage";
 import { ChatServiceProvider } from '../providers/chat-service/chat-service';
 import { EmojiProvider } from '../providers/emoji/emoji';
+import { IonicImageViewerModule } from 'ionic-img-viewer';
+import { IonHeaderScrollOpacityModule } from 'ion-header-scroll-opacity';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { EmojiProvider } from '../providers/emoji/emoji';
     TabsPage,
     WelcomePage,
     LandlordLoginPage,
-    LandlordRegisterPage
+    LandlordRegisterPage,
+    
   ],
   imports: [
     BrowserModule,
@@ -38,6 +41,8 @@ import { EmojiProvider } from '../providers/emoji/emoji';
       tabsHideOnSubPages:true,
       preloadModules: true
     }),
+    IonicImageViewerModule,
+    IonHeaderScrollOpacityModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [

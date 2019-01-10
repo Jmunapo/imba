@@ -81,8 +81,14 @@ export class DashboardPage {
     toast.present();
   }
 
+  addRooms(){
+    this.navCtrl.push("AddRoomWelcomePage", {
+      role: this.auth.isAuthenticated().role
+    })
+  }
+
   viewHouse(houseId: any){
-    this.navCtrl.push("ViewHousePage", {
+    this.navCtrl.push("HouseDetailsPage", {
        role: this.auth.isAuthenticated().role,
        houseId
     });

@@ -1,0 +1,43 @@
+page-add-room-welcome {
+    .progress{
+        ul{
+            margin: 0;
+            list-style: none;
+            position: relative;
+            &::before{
+                content: ' ';
+                height: 85%;
+                width: 1px;
+                background-color: #a0a0a0;
+                position: absolute;
+                top: 16px;
+                left: 33px;
+                z-index: -1;
+            }
+
+            .prog-icon{
+                border: 2px solid #F93B69;
+                border-radius: 50%;
+                width: 34px;
+                height: 34px;
+                font-size: 30px;
+                text-align: center;
+                z-index: 1;
+                background: #fff;
+                &.fa{
+                    color: color($colors, primary)
+                }
+            }
+
+            .prog-item{
+                font-size: 16px;
+            }
+
+            .completed{
+                color: color($colors, light) !important;
+                border-color: color($colors, done) !important;
+                background-color: color($colors, done) !important;
+            }
+        }
+    }
+}

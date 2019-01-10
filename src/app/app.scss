@@ -24,11 +24,10 @@
     align-items: center;
     justify-content: center;
     
-    background: #a39c91; /* Old browsers */
-    background: -moz-linear-gradient(-45deg, #a39c91 9%, #604141 47%, #423f3a 81%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(-45deg, #a39c91 9%,#604141 47%,#423f3a 81%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(135deg, #a39c91 9%,#604141 47%,#423f3a 81%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a39c91', endColorstr='#423f3a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+    background: #403A3E;  /* fallback for old browsers */
+   background: -webkit-linear-gradient(to right, #BE5869, #403A3E);  /* Chrome 10-25, Safari 5.1-6 */
+   background: linear-gradient(to right, #BE5869, #403A3E); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
 }
 
 .splash-page{

@@ -3,10 +3,10 @@ page-landlord-register {
     ion-content{
         text-align: center;
         /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3a1f1f+0,16314f+88 */
-        background: rgb(58,31,31); /* Old browsers */
-        background: -moz-linear-gradient(45deg, rgba(58,31,31,1) 0%, rgba(22,49,79,1) 88%); /* FF3.6-15 */
-        background: -webkit-linear-gradient(45deg, rgba(58,31,31,1) 0%,rgba(22,49,79,1) 88%); /* Chrome10-25,Safari5.1-6 */
-        background: linear-gradient(45deg, rgba(58,31,31,1) 0%,rgba(22,49,79,1) 88%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        background: #232526;  /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #414345, #232526);  /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     }
     img{
         width: 40%;

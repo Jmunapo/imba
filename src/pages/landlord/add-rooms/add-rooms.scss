@@ -1,0 +1,56 @@
+page-add-rooms {
+    .scroll-content{
+        margin-top: 5px;
+    }
+    ion-slide {
+        height: 100vh;
+        flex-direction: column;
+    }
+
+    ion-range{
+        .range-knob-handle{
+            display: none;
+        }
+        .range-slider{
+            height: 2px !important;
+        }
+        .range-bar{
+            top: unset !important;
+        }
+        .range-bar-active{
+            background-color: color($colors, primary) !important;
+        }
+    }
+    
+    ion-img {
+        max-width: 50vw;
+        max-height: 50vh;
+        overflow: hidden;
+    }
+
+    .step-one{
+        .map{
+            height: 84vh;
+            background-color: #818181;
+        }
+        .search-bar{
+            position: absolute;
+            width: 100%;
+            ion-searchbar{
+                padding: 22px;
+            }
+        }
+    }
+
+    ion-footer{
+        background: transparent;
+        text-align: center;
+        .next-btn{
+            width: calc(100% - 32px);
+            margin-left: 16px;
+            background: #F00000;
+            background: -webkit-linear-gradient(to right, #DC281E, #F00000);
+            background: linear-gradient(to right, #DC281E, #F00000);
+        }
+    }
+}

@@ -11,6 +11,8 @@
 
 </ion-header>
 
+<!-- https://www.joshmorony.com/creating-a-shrinking-header-for-segments-in-ionic/ -->
+
 <ion-content no-padding>
   <section class="stats" no-padding padding-bottom align-items-center>
     <ion-grid padding >
@@ -56,9 +58,9 @@
         </ion-row>
       </ion-grid>
   </section>
-  <ion-card class="add-house" (tap)="addHouse()">
+  <ion-card class="add-house" (tap)="addRooms()">
       <ion-card-header>
-        ADD HOUSE
+        ADD ROOMS
       </ion-card-header>
       <hr>
 
@@ -98,7 +100,7 @@
                       </ion-col>
                       <ion-col text-center>
                         <ion-note>Start From</ion-note>
-                        <p>45/Month</p>
+                        <p>$45/Month</p>
                       </ion-col>
                     </ion-row>
                   </ion-grid>
@@ -120,7 +122,7 @@
                       <p style="padding-top: 6px">300</p>
                   </ion-col>
                   <ion-col text-right>
-                    <button ion-button outline color="sec-dark" no-shadow text-capitalize>
+                    <button ion-button outline color="sec-dark" no-shadow text-capitalize (click)="viewHouse()">
                       view details
                     </button>
                   </ion-col>

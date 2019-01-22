@@ -1,20 +1,45 @@
 <ion-header no-border>
 
   <ion-navbar #navbar>
-    <ion-title>Step {{step}}-5</ion-title>
-    <ion-range disabled min="0" max="5" pin="false" [(ngModel)]="step" color="primary" no-padding padding-top></ion-range>
+    <ion-title>Step {{step}}-8</ion-title>
+
   </ion-navbar>
+    <ion-toolbar class="step-toolbar">
+        <ion-range disabled min="0" max="8" pin="false" [(ngModel)]="step" color="primary" no-padding></ion-range>
+    </ion-toolbar>
 
 </ion-header>
 
 
 <ion-content no-padding>
+    <ion-range float-left disabled min="0" max="8" pin="false" [(ngModel)]="step" color="primary" no-padding></ion-range>
+    <div padding-top></div>
     <ion-slides (ionSlideDidChange)="slideChanged()">
-        <ion-slide class="step-one">
-            <div class="search-bar" text-center>
-                <ion-searchbar (ionInput)="getItems($event)" placeholder="Enter your full address"></ion-searchbar>
-            </div>
-            <div class="map" id="map"></div>
+        <ion-slide class="step-one" #locationSlider>
+            <p *ngIf="submitAttempt" style="color: #ea6153;">Please fill out all details accurately.</p>
+
+            <ion-list no-lines>
+    
+                <form [formGroup]="locationForm">
+    
+                    <ion-item>
+                        <ion-label floating>First Name</ion-label>
+                        <ion-input formControlName="cityName" type="text"></ion-input>
+                    </ion-item>
+    
+                    <ion-item>
+                        <ion-label floating>Last Name</ion-label>
+                        <ion-input formControlName="location" type="text"></ion-input>
+                    </ion-item>
+    
+                    <ion-item>
+                        <ion-label floating>Age</ion-label>
+                        <ion-input formControlName="age" type="number"></ion-input>
+                    </ion-item>
+    
+                </form>
+    
+            </ion-list>
         </ion-slide>
     
         <ion-slide class="step-two">
@@ -40,13 +65,31 @@
             <h1>Heading</h1>
             <p>Five</p>
         </ion-slide>
+
+        <ion-slide class="step-six">
+            <ion-img src="../../../assets/imgs/house.svg"></ion-img>
+            <h1>Heading</h1>
+            <p>Six</p>
+        </ion-slide>
+
+        <ion-slide class="step-seven">
+            <ion-img src="../../../assets/imgs/house.svg"></ion-img>
+            <h1>Heading</h1>
+            <p>Seven</p>
+        </ion-slide>
+
+        <ion-slide class="step-eight">
+            <ion-img src="../../../assets/imgs/house.svg"></ion-img>
+            <h1>Heading</h1>
+            <p>Eight</p>
+        </ion-slide>
     </ion-slides>
 </ion-content>
 
-<ion-footer no-border no-shadow text-center>
-    <button ion-button block class="next-btn" (click)="nextStep()">
-      <span *ngIf="step == 1">Confirm Address</span>
-      <span *ngIf="step > 1 && step != 5">Next</span>
-      <span *ngIf="step == 5">Save</span>
+<ion-footer text-center no-border >
+    <button ion-button class="footer-button" text-capitalize (click)="nextStep()" [disabled]="stepError"> 
+        <span *ngIf="step == 1">Confirm Address</span>
+        <span *ngIf="step > 1 && step != 8">Next</span>
+        <span *ngIf="step == 8">Preview</span>
     </button>
 </ion-footer>

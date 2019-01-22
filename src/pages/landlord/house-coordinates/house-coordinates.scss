@@ -1,0 +1,13 @@
+page-house-coordinates {
+    .map{
+        height: 84vh;
+        background-color: #818181;
+    }
+    .search-bar{
+        position: absolute;
+        width: 100%;
+        ion-searchbar{
+            padding: 22px;
+        }
+    }
+}

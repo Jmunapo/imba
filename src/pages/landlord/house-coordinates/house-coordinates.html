@@ -1,0 +1,15 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>house-coordinates</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <div class="search-bar" text-center>
+        <ion-searchbar (ionInput)="getItems($event)" placeholder="Enter your full address"></ion-searchbar>
+    </div>
+    <div class="map" id="map"></div>
+</ion-content>

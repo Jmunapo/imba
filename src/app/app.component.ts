@@ -81,7 +81,7 @@ export class MyApp {
       }
       let a = 1;
       if(a === 2){
-        this.rootPage = "AddRoomWelcomePage";
+        this.rootPage = "AddRoomsPage";
         this.showSplash = false
         return 0;
       }

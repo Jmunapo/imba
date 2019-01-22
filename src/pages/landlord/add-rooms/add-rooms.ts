@@ -4,6 +4,9 @@ import { IonicPage, NavController, NavParams, Slides, Navbar, LoadingController 
 import { timer } from "rxjs/observable/timer";
 import { Platform } from 'ionic-angular/platform/platform';
 
+import { FormBuilder, FormGroup, Validators, AbstractControl } from '@angular/forms';
+import { AgeValidator } from '../../../validators/age';
+
 @IonicPage()
 @Component({
   selector: 'page-add-rooms',
@@ -11,8 +14,11 @@ import { Platform } from 'ionic-angular/platform/platform';
 })
 export class AddRoomsPage {
 
+  locationForm: FormGroup; 
+
   @ViewChild(Slides) slides: Slides;
   @ViewChild('navbar') navBar: Navbar;
+  @ViewChild('locationSlider') locationSlider: any;
 
   public unregisterBackButtonAction: any;
 
@@ -20,8 +26,15 @@ export class AddRoomsPage {
 
   constructor(public navCtrl: NavController,
     public loadingCtrl: LoadingController,
+    public formBuilder: FormBuilder,
     private platform: Platform,
     public navParams: NavParams) {
+
+      this.locationForm = formBuilder.group({
+        cityName: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        location: ['', Validators.compose([Validators.maxLength(30), Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+        age: [''/*, AgeValidator.isValid*/]
+    });
       
   }
 
@@ -65,7 +78,7 @@ initializeBackButtonCustomHandler(): void {
   }
 
   nextStep(){
-    if(this.step < 5){
+    if(this.step < 8){
       this.slides.lockSwipes(false);
       this.slides.slideNext(200);
       this.slides.lockSwipes(true);

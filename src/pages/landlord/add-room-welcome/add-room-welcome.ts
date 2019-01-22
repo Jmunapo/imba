@@ -60,7 +60,7 @@ export class AddRoomWelcomePage {
       {
         title: "Photos",
         icon_pack: "ionicons",
-        name: "ios-images",
+        name: "ios-photos",
         done: false
       }
       ,
@@ -75,6 +75,10 @@ export class AddRoomWelcomePage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad AddRoomWelcomePage');
+  }
+
+  beginAdding(){
+    this.navCtrl.push("AddRoomsPage");
   }
 
 }
